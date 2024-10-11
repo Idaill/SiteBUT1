@@ -1,0 +1,60 @@
+<!-- page2.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2 - Panier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .element {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Page 2 : Votre Panier</h1>
+    <div>
+        <p>Voici votre panier :</p>
+
+        <div id="cart-items"></div>
+        <div id="empty-cart" class="hidden">
+            <p>Votre panier est vide.</p>
+        </div>
+    </div>
+
+    <script>
+        // Récupération des paramètres de l'URL
+        const params = new URLSearchParams(window.location.search);
+        const products = params.getAll('product');
+
+        // Récupération de la div pour les éléments du panier
+        const cartItemsDiv = document.getElementById('cart-items');
+        const emptyCartDiv = document.getElementById('empty-cart');
+
+        // Vérification si des produits ont été sélectionnés
+        if (products.length > 0) {
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'element';
+                productDiv.textContent = product; // Affiche le nom du produit
+                cartItemsDiv.appendChild(productDiv);
+            });
+        } else {
+            // Si aucun produit n'est sélectionné, on affiche le message de panier vide
+            emptyCartDiv.classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>

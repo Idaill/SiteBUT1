@@ -1,0 +1,38 @@
+<!-- page1.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1 - Sélection de Produits</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Page 1 : Sélectionnez vos produits</h1>
+    <form action="page2.html" method="GET">
+        <label>
+            <input type="checkbox" name="product" value="T-shirt"> T-shirt - 20€
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="product" value="Pantalon"> Pantalon - 30€
+        </label>
+        <br>
+        <label>
+            <input type="checkbox" name="product" value="Casquette"> Casquette - 15€
+        </label>
+        <br><br>
+        <button type="submit">Voir le panier</button>
+    </form>
+
+</body>
+</html>
